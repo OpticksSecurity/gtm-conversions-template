@@ -1,4 +1,4 @@
-﻿___TERMS_OF_SERVICE___
+___TERMS_OF_SERVICE___
 
 By creating or modifying this file you agree to Google Tag Manager's Community
 Template Gallery Developer Terms of Service available at
@@ -76,7 +76,11 @@ const var3 = data.var3;
 const var4 = data.var4;
 
 const BASE_URL = "https://opticksstatic.com/conversion";
-const FULL_URL = BASE_URL + "?click_id="+id+"&var1="+var1+"&var2="+var2+"&var3="+var3+"&var4="+var4;
+const FULL_URL = "?click_id="+encodeUriComponent(id)+
+    "&var1="+encodeUriComponent(var1)+
+    "&var2="+encodeUriComponent(var2)+
+    "&var3="+encodeUriComponent(var3)+
+    "&var4="+encodeUriComponent(var4);
 
 sendPixel(FULL_URL, data.gtmOnSuccess, data.gtmOnFailure);
 
